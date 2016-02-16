@@ -1,5 +1,4 @@
 <?php
-
-echo "helloworld";
-
+header('Content-Type: application/json');
 ?>
+{libelle:'test'}
