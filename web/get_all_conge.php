@@ -36,8 +36,8 @@ if ($row_cnt > 0) {
         $product = array();
         $product["id_employe"] = $row["id_employe"];
         $product["id_conge"] = $row["id_conge"];
-        $product["datedebut"] = $row["datedebut"];
-        $product["datefin"] = $row["datefin"];
+        $product["date_debut"] = $row["date_debut"];
+        $product["date_fin"] = $row["date_fin"];
 		$product["motif"] = $row["motif"];
  
         // push single product into final response array

@@ -11,11 +11,11 @@
 $response = array();
  
 // check for required fields
-if (isset($_GET['id_conge']) && isset($_GET['datedebut']) && isset($_GET['datefin'])  && isset($_GET['motif']) && isset($_GET['id_employe'])) {
+if (isset($_GET['id_conge']) && isset($_GET['date_debut']) && isset($_GET['date_fin'])  && isset($_GET['motif']) && isset($_GET['id_employe'])) {
  
     $id_conge = $_GET['id_conge'];
-    $datedebut = $_GET['datedebut'];
-    $datefin = $_GET['datefin'];
+    $date_debut = $_GET['date_debut'];
+    $date_fin = $_GET['date_fin'];
 	$motif = $_GET['motif'];
 	$id_employe = $_GET['id_employe'];
  
@@ -30,7 +30,7 @@ if (isset($_GET['id_conge']) && isset($_GET['datedebut']) && isset($_GET['datefi
     $con = $db->connect();
     
     // mysql inserting a new row
-    $result = $con->query("INSERT INTO conge(id_conge, datedebut, datefin, motif, id_employe) VALUES($id_conge, '$datedebut', '$datefin' , '$motif', $id_employe )");
+    $result = $con->query("INSERT INTO conge(id_conge, date_debut, date_fin, motif, id_employe) VALUES($id_conge, '$date_debut', '$date_fin' , '$motif', $id_employe )");
  
     // check if row inserted or not
     if ($result) {

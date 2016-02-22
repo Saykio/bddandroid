@@ -22,7 +22,7 @@ $db = new DB_CONNECT();
 
 $con = $db->connect();
 
-$result = $con->query("SELECT datedebut, datefin 
+$result = $con->query("SELECT date_debut, date_fin 
 						from conge as c 
 						inner join employe as e on c.id_employe = e.id_employe 
 						where e.id_employe =$id_employe
@@ -38,11 +38,11 @@ if ($row_cnt > 0) {
      while ($row = mysqli_fetch_array($result)) {
         // temp user array
         $product = array();
-        $product["datedebut"] = $row["datedebut"];
-		$product["datefin"] = $row["datefin"];
+        $product["date_debut"] = $row["date_debut"];
+		$product["date_fin"] = $row["date_fin"];
 		array_push($response["employe"], $product);
-$DatedebutString = (string)$product["datedebut"];
-$DatefinString = (string)$product["datefin"];
+$DatedebutString = (string)$product["date_debut"];
+$DatefinString = (string)$product["date_fin"];
 
 $dureejour = (strtotime($DatefinString) - strtotime($DatedebutString));
 $dureejours = ($dureejour/86400);
