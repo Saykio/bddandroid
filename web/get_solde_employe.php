@@ -1,5 +1,5 @@
 <?php
- 
+    header('Content-Type: application/json');
  // Status : On Dev
  
 /*

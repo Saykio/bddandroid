@@ -1,5 +1,5 @@
 <?php
- 
+   header('Content-Type: application/json');
 /*
  * Following code will delete a product from table
  * A product is identified by product id (pid)
