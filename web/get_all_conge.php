@@ -16,10 +16,16 @@ require_once __DIR__ . '/db_connect.php';
 $db = new DB_CONNECT();
  
 // get all products from products table
+if (isset($_GET['id_employe'])) {
+    $id_employe = $_GET['id_employe'];}
 
 $con = $db->connect();
+if (isset($id_employe)){
 
-$result = $con->query("SELECT * FROM conge");
+	$result = $con->query("SELECT * FROM conge where id_employe = $id_employe");
+	} else { 
+	$result = $con->query("SELECT * FROM conge");
+	}
 
 $row_cnt = $result->num_rows;
   
