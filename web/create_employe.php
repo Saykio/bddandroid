@@ -11,9 +11,8 @@
 $response = array();
  
 // check for required fields
-if (isset($_GET['id_employe']) && isset($_GET['prenom_employe']) && isset($_GET['nom_employe'])  && isset($_GET['solde_conge'])) {
+if (isset($_GET['prenom_employe']) && isset($_GET['nom_employe'])  && isset($_GET['solde_conge'])) {
  
-    $id_employe = $_GET['id_employe'];
 	$prenom_employe = $_GET['prenom_employe'];
     $nom_employe = $_GET['nom_employe'];
     $solde_conge = $_GET['solde_conge'];
@@ -30,7 +29,7 @@ if (isset($_GET['id_employe']) && isset($_GET['prenom_employe']) && isset($_GET[
     $con = $db->connect();
     
     // mysql inserting a new row
-    $result = $con->query("INSERT INTO employe(id_employe, nom_employe, prenom_employe,  solde_conge ) VALUES('$id_employe', '$prenom_employe', '$nom_employe', '$solde_conge')");
+    $result = $con->query("INSERT INTO employe(id_employe, nom_employe, prenom_employe,  solde_conge ) VALUES(NULL, '$prenom_employe', '$nom_employe', '$solde_conge')");
  
     // check if row inserted or not
     if ($result) {
