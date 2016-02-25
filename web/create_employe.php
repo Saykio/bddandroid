@@ -35,7 +35,7 @@ if (isset($_GET['prenom_employe']) && isset($_GET['nom_employe'])  && isset($_GE
     if ($result) {
         // successfully inserted into database
         $response["success"] = 1;
-        $response["message"] = "Conge successfully created.";
+        $response["message"] = "Employe successfully created.";
  
         // echoing JSON response
         echo json_encode($response);
